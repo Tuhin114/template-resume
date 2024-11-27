@@ -240,7 +240,14 @@ eleventyNavigation:
       </div><div class="column">
       {% endif %}
   
-    <a href="{{ post.url | url}}"><img src = "{{ post.data.image | url }}" style="width:100%;margin-bottom:0px" > </a>
+      <div class="w3-card w3-white w3-margin-bottom w3-hover-shadow">
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}" style="width:100%; border-radius: 8px;">
+          <div class="w3-container w3-padding-16">
+            <h3 class="w3-text-dark-grey">{{ post.data.title }}</h3>
+            <p class="w3-opacity">{{ post.data.description }}</p>
+            
+          </div>
+        </div>
   
   {% endfor %}
   </div>
