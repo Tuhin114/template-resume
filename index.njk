@@ -187,71 +187,34 @@ eleventyNavigation:
 
 
 <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-    <h2 class="w3-text-light-grey">My Photos</h2>
-    <hr style="width:200px" class="w3-opacity">
+  <div class="w3-padding-64 w3-content" id="projects">
+  <h2 class="w3-text-light-grey w3-center">My Projects</h2>
+  <hr style="width:200px" class="w3-opacity">
 
-    <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
-
-  {#  <div class="w3-half">
-    {% for post in collections.photo | head(-8) %}
-      {% if loop.index==4 %}
-      </div><div class="w3-half">
-      {% endif %}
-        <a href="{{ post.url | url}}"><img src = "{{ post.data.image | url }}" style="width:100%" > </a>
-        
-    {% endfor %}
-    
+  <div class="w3-row-padding" style="margin: 0 -8px;">
+    <div class="w3-half">
+      {% for post in collections.all %}
+      {% if post.data.layout == "post" %}
+      {% if loop.index == 5 %}
     </div>
-#}
-    
-<style>
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-}
-
-/* Create two equal columns that sit next to each other */
-.column {
-  flex: 50%;
-  max-width: 50%;
-  padding: 0 4px;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
-}
-  {% raw %}
-@media (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-  {% endraw %}
-
-</style>
-<div class="row"> 
-  <div class="column">
-   {% for post in collections.photo | head(-8) %}
-   {% if loop.index==4 %}
-      </div><div class="column">
+    <div class="w3-half">
       {% endif %}
-  
-    <a href="{{ post.url | url}}"><img src = "{{ post.data.image | url }}" style="width:100%;margin-bottom:0px" > </a>
-  
-  {% endfor %}
-  </div>
-  </div>
-
-
-     
-    <!-- End photo grid -->
+        <div class="w3-card w3-white w3-margin-bottom w3-hover-shadow">
+          <img src="{{ post.data.image }}" alt="{{ post.data.title }}" style="width:100%; border-radius: 8px;">
+          <div class="w3-container w3-padding-16">
+            <h3 class="w3-text-dark-grey">{{ post.data.title }}</h3>
+            <p class="w3-opacity">{{ post.data.description }}</p>
+            <a href="{{ post.data.github }}" target="_blank">
+              <button class="w3-button w3-dark-grey w3-hover-black w3-round">View on GitHub</button>
+            </a>
+          </div>
+        </div>
+      {% endif %}
+      {% endfor %}
     </div>
-  <!-- End Portfolio Section -->
   </div>
+</div>
+
  <div class="w3-content w3-justify w3-text-grey w3-padding-64">
 <h1>Latest 3 Posts</h1>
 
