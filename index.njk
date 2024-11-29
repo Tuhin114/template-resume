@@ -235,7 +235,7 @@ eleventyNavigation:
 </style>
 <div class="row"> 
   <div class="column">
-   {% for post in collections.photo | slice(0, 5) %}
+   {% for post in collections.photo | head(-8)) %}
    {% if loop.index==4 %}
       </div><div class="column">
       {% endif %}
