@@ -16,7 +16,7 @@ eleventyNavigation:
   <div class="w3-content w3-justify w3-text-grey w3-padding-64 w3-flex w3-flex-row" id="about">
     <div>
     <div class="w3-half">
-    <img src="{{ 'img/w3images/My_Profile_Photo-removebg-preview.png' | url }}" alt="About Me" class="w3-image" style="max-width:100%; max-height: 70%; border-radius:10px;">
+    <img src="{{ 'img/w3images/My_Profile_Photo-removebg-preview.png' | url }}" alt="About Me" class="w3-image" style="max-width:100%; max-height:70%; border-radius:10px; aspect-ratio: 1/1;">
     </div>
     <div class="w3-half">
     <h2 class="w3-text-light-grey">{{ metadata.title }}</h2>
@@ -240,7 +240,7 @@ eleventyNavigation:
       </div><div class="column">
       {% endif %}
   
-    <a href="{{ post.url | url}}"><img src = "{{ post.data.image | url }}" style="width:100%;margin-bottom:0px" > </a>
+    <a href="{{ post.url | url}}"><img src = "{{ post.data.image | url }}" loading="lazy" style="width:100%;margin-bottom:0px" > </a>
     <div class="w3-container w3-padding-16">
                 <!-- Project Title -->
                 <h3 class="w3-text-white">{{ post.data.title }}</h3>
