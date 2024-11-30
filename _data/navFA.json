@@ -1,7 +1,7 @@
 {
     "Home" : "fa-home",
     "About" : "fa-user",
-    "Projects" : "fa-eye",
+    "Photo" : "fa-eye",
     "Contact" : "fa-envelope",
     "Archive" : "fa-archive"
 }
